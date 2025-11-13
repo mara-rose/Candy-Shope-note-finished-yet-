@@ -1,0 +1,50 @@
+body{
+  font-family: Roboto,Arial;
+  margin: 0;
+  color: rgb(243, 159, 159);;
+}
+p{
+  color: rgb(243, 159, 159);
+  margin:0px;
+}
+button{
+  cursor: pointer;
+}
+
+input, select, button{
+  font-family: Roboto,Arial;
+}
+
+.button-primary {
+  background-color: pink;
+  border: 1px solid plum;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px lightcoral;
+}
+
+.button-primary:hover{
+  background-color: rgb(252, 162, 177);
+  box-shadow: 0 2px 5px rgb(255, 115, 115);
+}
+
+.button-primary:active{
+  background-color: pink;
+  border: 1px solid plum;
+  box-shadow: none;
+}
+
+select{
+  color: rgb(255, 72, 133);
+  border: 1px solid palevioletred ;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 3px 5px;
+
+}
+
+select:focus,
+input:focus{
+  outline: 2px solid palevioletred;
+}
