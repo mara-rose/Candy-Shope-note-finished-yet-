@@ -85,6 +85,7 @@
   flex-shrink: 0;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .orders-link{
@@ -92,8 +93,8 @@
 }
 
 .returns-orders-text{
-  margin-top: 10px;
   font-size: 18px;
+  font-weight: 700;
 }
 
 .cart-link{
@@ -104,7 +105,7 @@
 }
 
 .cart-icon{
-  width: 45px;
+  width: 40px;
 }
 
 .cart-text{
@@ -118,11 +119,10 @@
   font-size: 18px;
   font-weight: 700;
   position: absolute;
-  left: 22px;
-  bottom: 40px;
+  left: 19px;
+  bottom: 35px;
 }
 
 .user-icon{
   width: 30px;
-  margin-top: 10px;
 }
