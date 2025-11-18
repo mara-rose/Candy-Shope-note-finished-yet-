@@ -1,18 +1,25 @@
-body{
-  font-family: Roboto,Arial;
+body {
+  font-family: Roboto, Arial;
   margin: 0;
-  color: rgb(243, 159, 159);;
+  color: rgb(0, 0, 0);
 }
-p{
+.main {
+  margin-top: 70px;
+  background-color: rgb(255, 235, 239);
+  padding: 10px 20px;
+}
+p {
   color: rgb(243, 159, 159);
-  margin:0px;
+  margin: 0px;
 }
-button{
+button {
   cursor: pointer;
 }
 
-input, select, button{
-  font-family: Roboto,Arial;
+input,
+select,
+button {
+  font-family: Roboto, Arial;
 }
 
 .button-primary {
@@ -23,28 +30,42 @@ input, select, button{
   box-shadow: 0 2px 5px lightcoral;
 }
 
-.button-primary:hover{
+.button-primary:hover {
   background-color: rgb(252, 162, 177);
-  box-shadow: 0 2px 5px rgb(255, 115, 115);
 }
 
-.button-primary:active{
+.button-primary:active {
   background-color: pink;
   border: 1px solid plum;
   box-shadow: none;
 }
 
-select{
+.button-secondary {
+  background-color: palevioletred;
+  border: 1px solid rgb(170, 87, 114);
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px lightcoral;
+}
+
+.button-secondary:hover {
+  background-color: rgb(216, 0, 72);
+}
+.button-secondary:active {
+  background-color: palevioletred;
+  border: 1px solid rgb(170, 87, 114);
+  box-shadow: none;
+}
+select {
   color: rgb(255, 72, 133);
-  border: 1px solid palevioletred ;
+  border: 1px solid palevioletred;
   border-radius: 8px;
   cursor: pointer;
   font-size: 14px;
   padding: 3px 5px;
-
 }
 
 select:focus,
-input:focus{
+input:focus {
   outline: 2px solid palevioletred;
 }
