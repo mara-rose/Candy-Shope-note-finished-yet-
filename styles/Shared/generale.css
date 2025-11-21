@@ -56,6 +56,14 @@ button {
   border: 1px solid rgb(170, 87, 114);
   box-shadow: none;
 }
+
+.link-primary {
+  color: rgb(107, 189, 216);
+  cursor: pointer;
+}
+.link-primary:hover {
+  color: rgb(228, 79, 79);
+}
 select {
   color: rgb(255, 72, 133);
   border: 1px solid palevioletred;
