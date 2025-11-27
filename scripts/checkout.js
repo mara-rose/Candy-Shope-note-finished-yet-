@@ -1,4 +1,4 @@
-import { cart, removeFromCart } from "../data/cart.js";
+import { cart, removeFromCart, calculateCartQuantity } from "../data/cart.js";
 import { products } from "../data/products.js";
 
 let cartSummaryHTML = "";
@@ -25,7 +25,7 @@ cart.forEach((cartItem) => {
                     <span
                       >Quantity : <span class="quantity-label">${cartItem.quantity}</span>
                     </span>
-                    <span class="update-quantity-link link-primary"
+                    <span class="update-quantity-link link-primary "
                       >Update
                     </span>
                     <span class="delete-quantity-link link-primary js-delete-link 
@@ -98,10 +98,7 @@ document.querySelectorAll(".js-delete-link").forEach((link) => {
 });
 
 function updateCartQuantity() {
-  let cartQuantity = 0;
-  cart.forEach((cartItem) => {
-    cartQuantity += cartItem.quantity;
-  });
+  const cartQuantity = calculateCartQuantity();
   document.querySelector(
     ".js-return-to-home-link"
   ).innerText = `${cartQuantity} items`;
