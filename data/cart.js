@@ -20,11 +20,10 @@ export function addToCart(productId) {
     matchingItem.quantity += quantity;
   } else {
     cart.push({
-      productId: productId,
+      productId,
       quantity: quantity,
     });
   }
-
   saveToStorage();
 }
 
@@ -35,7 +34,6 @@ export function removeFromCart(productId) {
       newCart.push(cartItem);
     }
   });
-
   cart = newCart;
   saveToStorage();
 }

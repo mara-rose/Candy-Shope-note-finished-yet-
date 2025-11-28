@@ -1,37 +1,36 @@
-
-.products-grid{
+.products-grid {
   display: grid;
-  grid-template-columns: repeat(8,1fr);
+  grid-template-columns: repeat(8, 1fr);
   gap: 10px;
 }
 
-@media(max-width: 2000px){
-  .products-grid{
-    grid-template-columns: repeat(7,1fr);
+@media (max-width: 2000px) {
+  .products-grid {
+    grid-template-columns: repeat(7, 1fr);
   }
 }
 
-@media(max-width:1600px){
-  .products-grid{
-    grid-template-columns: repeat(6,1fr);
+@media (max-width: 1600px) {
+  .products-grid {
+    grid-template-columns: repeat(6, 1fr);
   }
 }
 
-@media(max-width: 1300px){
-  .products-grid{
-    grid-template-columns: repeat(5,1fr);
+@media (max-width: 1300px) {
+  .products-grid {
+    grid-template-columns: repeat(5, 1fr);
   }
 }
 
-@media(max-width:1000px){
-  .products-grid{
-    grid-template-columns: repeat(4,1fr);
+@media (max-width: 1000px) {
+  .products-grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
-@media(max-width:800px){
-  .products-grid{
-    grid-template-columns: repeat(3,1fr);
+@media (max-width: 800px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -47,8 +46,8 @@
   }
 }
 
-.product-container{
-  padding : 12px 28px;
+.product-container {
+  padding: 12px 28px;
   border: 1px solid rgb(243, 159, 159);
   background-color: white;
   border-radius: 3px;
@@ -56,47 +55,47 @@
   flex-direction: column;
 }
 
-.product-image-container{
-  margin-bottom:20px ;
+.product-image-container {
+  margin-bottom: 20px;
 }
-.product-image{
+.product-image {
   width: 140px;
   height: 140px;
 }
 
-.product-name{
+.product-name {
   height: 40px;
   font-weight: 450;
   margin-bottom: 5px;
 }
 
-.product-rating-container{
+.product-rating-container {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
 }
 
-.product-rating-stars{
+.product-rating-stars {
   width: 100px;
   margin-right: 6px;
 }
 
-.product-rating-count{
+.product-rating-count {
   color: rgb(134, 36, 53);
   cursor: pointer;
   margin-top: 3px;
 }
 
-.product-price{
+.product-price {
   font-weight: 700;
   margin-bottom: 10px;
 }
 
-.product-quantity-container{
+.product-quantity-container {
   margin-bottom: 5px;
 }
 
-.added-to-cart{
+.added-to-cart {
   font-size: 14px;
   color: rgb(6, 125, 98);
   display: flex;
@@ -105,12 +104,16 @@
   opacity: 0;
 }
 
-.added-to-cart img{
-  height:20px ;
+.added-to-cart-visible {
+  opacity: 1;
+}
+
+.added-to-cart img {
+  height: 20px;
   margin-right: 5px;
 }
 
-.add-to-cart-button{
+.add-to-cart-button {
   width: 100%;
   padding: 8px;
   border-radius: 50px;
