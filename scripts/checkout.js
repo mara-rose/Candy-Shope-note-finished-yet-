@@ -116,28 +116,35 @@ document.querySelectorAll(".js-update-link").forEach((link) => {
 });
 
 document.querySelectorAll(".js-save-link").forEach((link) => {
+  const productId = link.dataset.productId;
+  const quantityInput = document.querySelector(
+    `.js-quantity-input-${productId}`
+  );
   link.addEventListener("click", () => {
-    const productId = link.dataset.productId;
-
-    const quantityInput = document.querySelector(
-      `.js-quantity-input-${productId}`
-    );
-    const newQuantity = Number(quantityInput.value);
-    updateQuantity(productId, newQuantity);
-    if (newQuantity < 0 || newQuantity >= 100) {
-      alert("Quantity must be at least 0 and less than 1000");
-      return;
+    handleUpadateQuantity(productId, quantityInput);
+  });
+  quantityInput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      handleUpadateQuantity(productId, quantityInput);
     }
-    const quantityLabel = document.querySelector(
-      `.js-quantity-label-${productId}`
-    );
-    quantityLabel.innerHTML = newQuantity;
-    updateCartQuantity();
-    const container = document.querySelector(`.js-cart-container-${productId}`);
-    container.classList.remove("is-editing-quantity");
   });
 });
 
+function handleUpadateQuantity(productId, quantityInput) {
+  const newQuantity = Number(quantityInput.value);
+  updateQuantity(productId, newQuantity);
+  if (newQuantity < 0 || newQuantity >= 100) {
+    alert("Quantity must be at least 0 and less than 1000");
+    return;
+  }
+  const quantityLabel = document.querySelector(
+    `.js-quantity-label-${productId}`
+  );
+  quantityLabel.innerHTML = newQuantity;
+  updateCartQuantity();
+  const container = document.querySelector(`.js-cart-container-${productId}`);
+  container.classList.remove("is-editing-quantity");
+}
 
 function updateCartQuantity() {
   const cartQuantity = calculateCartQuantity();

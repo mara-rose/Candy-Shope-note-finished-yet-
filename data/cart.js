@@ -11,13 +11,17 @@ export function addToCart(productId) {
       matchingItem = cartItem;
     }
   });
+  const selectorElement = document.querySelector(
+    `.js-quantity-selector-${productId}`
+  );
+  const quantity = Number(selectorElement.value);
   //mathcingItem truthy
   if (matchingItem) {
-    matchingItem.quantity += 1;
+    matchingItem.quantity += quantity;
   } else {
     cart.push({
       productId: productId,
-      quantity: 1,
+      quantity: quantity,
     });
   }
 
