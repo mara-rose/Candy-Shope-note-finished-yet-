@@ -1,4 +1,4 @@
-.header{
+.header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -11,17 +11,18 @@
   padding: 5px 15px;
 }
 
-.header-left-section{
+.header-left-section {
   width: 180px;
 }
 
-@media(max-width: 800px){
-  .header-left-section{
+@media (max-width: 800px) {
+  .header-left-section {
+    /* same as saying "forget any width I was given, act natural" */
     width: unset;
   }
 }
 
-.header-link{
+.header-link {
   display: inline-block;
   padding: 4px;
   border-radius: 2px;
@@ -29,27 +30,27 @@
   cursor: pointer;
 }
 
-.candy-logo{
+.candy-logo {
   width: 100px;
   margin-top: 8px;
 }
 
-.candy-logo-mobile{
-  display:none ;
+.candy-logo-mobile {
+  display: none;
 }
 
-@media(max-width: 575px){
-  .candy-logo{
+@media (max-width: 575px) {
+  .candy-logo {
     display: none;
   }
-  .candy-logo-mobile{
-   display: block;
-   width: 50px;
-   margin-top: 5px;
+  .candy-logo-mobile {
+    display: block;
+    width: 50px;
+    margin-top: 5px;
   }
 }
 
-.header-middle-section{
+.header-middle-section {
   flex: 1;
   max-width: 850px;
   display: flex;
@@ -57,30 +58,30 @@
   margin-right: 10px;
 }
 
-.search-bar{
+.search-bar {
   flex: 1;
   width: 0;
   font-size: 16px;
   height: 38px;
-  padding-left: 15px; 
+  padding-left: 15px;
   border-radius: 4px;
   border: 1px solid rgb(243, 159, 159);
 }
 
-.search-button{
-  background-color:transparent;
+.search-button {
+  background-color: transparent;
   border: none;
-  width:45px ;
+  width: 45px;
   flex-shrink: 0;
 }
 
-.search-icon{
+.search-icon {
   height: 30px;
-  margin-bottom:3px ;
+  margin-bottom: 3px;
   color: rgb(243, 159, 159);
 }
 
-.header-right-section{
+.header-right-section {
   width: 190px;
   flex-shrink: 0;
   display: flex;
@@ -88,33 +89,33 @@
   align-items: center;
 }
 
-.orders-link{
+.orders-link {
   color: white;
 }
 
-.returns-orders-text{
+.returns-orders-text {
   font-size: 18px;
   font-weight: 700;
 }
 
-.cart-link{
- color: white;
- display: flex;
- align-items: center;
- position: relative;
+.cart-link {
+  color: white;
+  display: flex;
+  align-items: center;
+  position: relative;
 }
 
-.cart-icon{
+.cart-icon {
   width: 40px;
 }
 
-.cart-text{
+.cart-text {
   font-size: 15px;
   color: rgb(243, 159, 159);
   font-weight: 700;
 }
 
-.cart-quantity{
+.cart-quantity {
   color: rgb(243, 159, 159);
   font-size: 18px;
   font-weight: 700;
@@ -123,6 +124,6 @@
   bottom: 35px;
 }
 
-.user-icon{
+.user-icon {
   width: 30px;
 }
