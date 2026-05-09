@@ -7,7 +7,10 @@ import {
 } from "../../data/cart.js";
 import { products, getProduct } from "../../data/products.js";
 import dayjs from "https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js";
-import { deliveryOptions } from "../../data/deliveryOption.js";
+import {
+  deliveryOptions,
+  getDeliveryOption,
+} from "../../data/deliveryOption.js";
 
 /// instead chang the data one by one using dom we regenerate all the html by use function renderOrderSummary()
 export function renderOrderSummary() {
@@ -15,16 +18,10 @@ export function renderOrderSummary() {
   let cartSummaryHTML = "";
   cart.forEach((cartItem) => {
     const productId = cartItem.productId;
-
     const matchingProduct = getProduct(productId);
 
     const deliveryOptionId = cartItem.deliveryOptionId;
-    let matchingDeliveryOption;
-    deliveryOptions.forEach((Option) => {
-      if (Option.id === deliveryOptionId) {
-        matchingDeliveryOption = Option;
-      }
-    });
+    const matchingDeliveryOption = getDeliveryOption(deliveryOptionId);
 
     const today = dayjs();
     const deliveryDate = today.add(matchingDeliveryOption.deliveryDays, "days");
