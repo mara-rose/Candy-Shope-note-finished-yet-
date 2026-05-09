@@ -9,6 +9,7 @@ import { products } from "../data/products.js";
 import dayjs from "https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js";
 import { deliveryOptions } from "../data/deliveryOption.js";
 
+/// instead chang the data one by one using dom we regenerate all the html by use function renderOrderSummary()
 function renderOrderSummary() {
   updateCartQuantity();
   let cartSummaryHTML = "";
@@ -119,7 +120,7 @@ function renderOrderSummary() {
       const productId = link.dataset.productId;
       removeFromCart(productId);
       const deleteElement = document.querySelector(
-        `.js-cart-container-${productId}`
+        `.js-cart-container-${productId}`,
       );
       deleteElement.remove();
       updateCartQuantity();
@@ -130,7 +131,7 @@ function renderOrderSummary() {
     link.addEventListener("click", () => {
       const productId = link.dataset.productId;
       const container = document.querySelector(
-        `.js-cart-container-${productId}`
+        `.js-cart-container-${productId}`,
       );
       container.classList.add("is-editing-quantity");
     });
@@ -139,7 +140,7 @@ function renderOrderSummary() {
   document.querySelectorAll(".js-save-link").forEach((link) => {
     const productId = link.dataset.productId;
     const quantityInput = document.querySelector(
-      `.js-quantity-input-${productId}`
+      `.js-quantity-input-${productId}`,
     );
     link.addEventListener("click", () => {
       handleUpadateQuantity(productId, quantityInput);
@@ -159,19 +160,18 @@ function renderOrderSummary() {
       return;
     }
     const quantityLabel = document.querySelector(
-      `.js-quantity-label-${productId}`
+      `.js-quantity-label-${productId}`,
     );
     quantityLabel.innerHTML = newQuantity;
     updateCartQuantity();
     const container = document.querySelector(`.js-cart-container-${productId}`);
     container.classList.remove("is-editing-quantity");
   }
-
+// to display header quantity
   function updateCartQuantity() {
     const cartQuantity = calculateCartQuantity();
-    document.querySelector(
-      ".js-return-to-home-link"
-    ).innerText = `${cartQuantity} items`;
+    document.querySelector(".js-return-to-home-link").innerText =
+      `${cartQuantity} items`;
   }
 
   document.querySelectorAll(".js-delivery-option").forEach((element) => {

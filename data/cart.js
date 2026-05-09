@@ -13,11 +13,14 @@ if (!cart) {
     },
   ];
 }
-
+// to save the cart in localstorage
 function saveToStorage() {
   localStorage.setItem("cart", JSON.stringify(cart));
 }
 
+// loop cart if productId that we get from id dataset of element equal id of cart we put in new var matchingItem
+// always we get string form dom so we use NUMber function to get value of input
+// if matching exist add quantity in matching who has object of cart if not we use push
 export function addToCart(productId) {
   let matchingItem;
   cart.forEach((cartItem) => {
@@ -26,7 +29,7 @@ export function addToCart(productId) {
     }
   });
   const selectorElement = document.querySelector(
-    `.js-quantity-selector-${productId}`
+    `.js-quantity-selector-${productId}`,
   );
   const quantity = Number(selectorElement.value);
   //mathcingItem truthy
@@ -42,6 +45,8 @@ export function addToCart(productId) {
   saveToStorage();
 }
 
+// to delect cart in the page we creat new array
+// and loop the cart if id cart not equal productId push mean push everything in new cart expact the way that want delete and put new array in cart
 export function removeFromCart(productId) {
   const newCart = [];
   cart.forEach((cartItem) => {
@@ -53,6 +58,7 @@ export function removeFromCart(productId) {
   saveToStorage();
 }
 
+//function to calculate the header quantity in display in dom with function updateCartQuantity() in checkout.js
 export function calculateCartQuantity() {
   let cartQuantity = 0;
   cart.forEach((cartItem) => {
@@ -61,6 +67,8 @@ export function calculateCartQuantity() {
   return cartQuantity;
 }
 
+// function in checkout.js we want to update quantity
+// as alway check if product exist in cart by id and than put in machingItem and update the data matchingItem.quantity
 export function updateQuantity(productId, newQuantity) {
   let matchingItem;
   cart.forEach((cartItem) => {
@@ -72,6 +80,8 @@ export function updateQuantity(productId, newQuantity) {
   saveToStorage();
 }
 
+// function in checkout.js we want to update quantity
+// as alway check if product exist in cart by id and than put in machingItem and update the data   matchingItem.deliveryOptionId
 export function updateDeliveryOption(productId, deliveryOptionId) {
   let matchingItem;
   cart.forEach((cartItem) => {
