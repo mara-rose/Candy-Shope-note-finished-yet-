@@ -110,6 +110,7 @@ export function renderOrderSummary() {
     link.addEventListener("click", () => {
       const productId = link.dataset.productId;
       removeFromCart(productId);
+      renderPaymentSummary();
       const deleteElement = document.querySelector(
         `.js-cart-container-${productId}`,
       );
@@ -135,10 +136,12 @@ export function renderOrderSummary() {
     );
     link.addEventListener("click", () => {
       handleUpadateQuantity(productId, quantityInput);
+      renderPaymentSummary();
     });
     quantityInput.addEventListener("keydown", (event) => {
       if (event.key === "Enter") {
         handleUpadateQuantity(productId, quantityInput);
+        renderPaymentSummary();
       }
     });
   });
