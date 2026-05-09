@@ -11,6 +11,7 @@ import {
   deliveryOptions,
   getDeliveryOption,
 } from "../../data/deliveryOption.js";
+import { renderPaymentSummary } from "../checkout/paymentSummary.js";
 /// instead chang the data one by one using dom we regenerate all the html by use function renderOrderSummary()
 export function renderOrderSummary() {
   updateCartQuantity();
@@ -169,6 +170,7 @@ export function renderOrderSummary() {
       const { productId, deliveryOptionId } = element.dataset;
       updateDeliveryOption(productId, deliveryOptionId);
       renderOrderSummary();
+      renderPaymentSummary();
     });
   });
 }
