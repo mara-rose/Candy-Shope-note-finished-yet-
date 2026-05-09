@@ -1,3 +1,14 @@
+// put productId of cart array and find match with
+// id of product then put it in matchingProudct
+export function getProduct(productId) {
+  let matchingProduct;
+  products.forEach((product) => {
+    if (product.id === productId) {
+      matchingProduct = product;
+    }
+  });
+  return matchingProduct;
+}
 export const products = [
   {
     id: "8c9c52b5-5a19-4bcb-a5d1-158a74287c53",
