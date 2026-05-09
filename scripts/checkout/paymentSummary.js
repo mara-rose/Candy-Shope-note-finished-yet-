@@ -5,6 +5,7 @@ export function renderPaymentSummary() {
   let productTotal = 0;
   let shippingTotal = 0;
   let totalBeforeTax = 0;
+  
   cart.forEach((cartItem) => {
     const matchingProduct = getProduct(cartItem.productId);
     productTotal += matchingProduct.price * cartItem.quantity;
@@ -15,4 +16,6 @@ export function renderPaymentSummary() {
   console.log(productTotal);
   console.log(shippingTotal);
   console.log(totalBeforeTax);
+  const TaxProduct = totalBeforeTax * 0.1;
+  const totalAllPayment = TaxProduct + totalBeforeTax;
 }
