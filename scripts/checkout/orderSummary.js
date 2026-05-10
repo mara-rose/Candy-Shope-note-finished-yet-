@@ -12,9 +12,10 @@ import {
   getDeliveryOption,
 } from "../../data/deliveryOption.js";
 import { renderPaymentSummary } from "../checkout/paymentSummary.js";
+import { renderCheckoutHeader} from "../checkout/checkoutHeader.js"
 /// instead chang the data one by one using dom we regenerate all the html by use function renderOrderSummary()
 export function renderOrderSummary() {
-  updateCartQuantity();
+ // updateCartQuantity();
   let cartSummaryHTML = "";
   cart.forEach((cartItem) => {
     const productId = cartItem.productId;
@@ -118,7 +119,8 @@ export function renderOrderSummary() {
     //  deleteElement.remove();
       renderOrderSummary();
       renderPaymentSummary();
-      updateCartQuantity();
+      renderCheckoutHeader();
+     // updateCartQuantity();
     });
   });
 
@@ -160,16 +162,17 @@ export function renderOrderSummary() {
       `.js-quantity-label-${productId}`,
     );
     quantityLabel.innerHTML = newQuantity;
-    updateCartQuantity();
+   // updateCartQuantity();
+   renderCheckoutHeader();
     const container = document.querySelector(`.js-cart-container-${productId}`);
     container.classList.remove("is-editing-quantity");
   }
   // to display header quantity
-  function updateCartQuantity() {
-    const cartQuantity = calculateCartQuantity();
-    document.querySelector(".js-return-to-home-link").innerText =
-      `${cartQuantity} items`;
-  }
+  //function updateCartQuantity() {
+   // const cartQuantity = calculateCartQuantity();
+   // document.querySelector(".//js-return-to-home-link").innerText =
+    //  `${cartQuantity} items`;
+ // }
 
   document.querySelectorAll(".js-delivery-option").forEach((element) => {
     element.addEventListener("click", () => {
