@@ -25,13 +25,23 @@ export function getDeliveryOption(deliveryOptionId) {
       matchingDeliveryOption = Option;
     }
   });
-  return matchingDeliveryOption || deliveryOptionId[0];
+  return matchingDeliveryOption || deliveryOptions[0];
 }
 
 
 export function calculateDeliveryDate(matchingDeliveryOption){
-    const today = dayjs();
-    const deliveryDate = today.add(matchingDeliveryOption.deliveryDays, "days");
-    const dateString = deliveryDate.format("dddd, MMMM D");
-    return dateString;
+   let deliveryDate = dayjs();
+   let remainingDays= matchingDeliveryOption.deliveryDays;
+    while(remainingDays>0){
+     deliveryDate = deliveryDate.add(1,'day');
+     if(!isWeekend(deliveryDate)){
+      remainingDays--;
+     }
+    } 
+   const dateString = deliveryDate.format("dddd, MMMM D");
+   return dateString;
+}
+function isWeekend(today){
+  const dayOfWeek = today.format('dddd');
+  return dayOfWeek === 'Friday' || dayOfWeek === 'Saturday';
 }
