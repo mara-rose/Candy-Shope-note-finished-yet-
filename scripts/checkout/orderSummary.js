@@ -110,11 +110,14 @@ export function renderOrderSummary() {
     link.addEventListener("click", () => {
       const productId = link.dataset.productId;
       removeFromCart(productId);
+     // when deleting a product form the cart,
+     //instead of using the DOM and updating the page directly with remove() ,regenerate the HTML for the order summary
+     // const deleteElement = document.//querySelector(
+    //    `.js-cart-container-${productId}`,
+   //   );
+    //  deleteElement.remove();
+      renderOrderSummary();
       renderPaymentSummary();
-      const deleteElement = document.querySelector(
-        `.js-cart-container-${productId}`,
-      );
-      deleteElement.remove();
       updateCartQuantity();
     });
   });
