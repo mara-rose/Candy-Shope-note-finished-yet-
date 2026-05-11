@@ -18,7 +18,7 @@ export const products = [
       stars: 0,
       count: 1010,
     },
-    price: 500,
+    price: 2095,
   },
   {
     id: "8a53b180-6d40-4i65-ab26-b94ecf709bce",
@@ -29,7 +29,7 @@ export const products = [
       stars: 5,
       count: 340,
     },
-    price: 700,
+    price: 2000.5,
   },
   {
     id: "dd82ca78-a18b-4e2a-9250-31e67412f98d",
