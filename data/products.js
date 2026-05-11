@@ -150,7 +150,7 @@ export const products = [
       stars: 3.5,
       count: 300,
     },
-    price: 999.99,
+    price: 99999,
   },
   {
     id: "54e0eccd-8f36-462b-b68a-8182611d9add",
@@ -181,7 +181,7 @@ export const products = [
       stars: 3.5,
       count: 99,
     },
-    price: 699.99,
+    price: 69999,
   },
   {
     id: "901eb2ca-386d-432e-82f0-6fb1ee7bf969",
@@ -191,7 +191,7 @@ export const products = [
       stars: 3,
       count: 2200,
     },
-    price: 750.5,
+    price: 7505,
   },
   {
     id: "82bb68d7-ebc9-476a-989c-c78a40ee5cd9",
@@ -374,7 +374,7 @@ export const products = [
       stars: 4.5,
       count: 130,
     },
-    price: 1440.9,
+    price: 14409,
   },
   {
     id: "a45cfa0a-66d6-4dc7-9475-e2b01595f7d7",

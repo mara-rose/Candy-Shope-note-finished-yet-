@@ -14,6 +14,7 @@ import {
 } from "../../data/deliveryOption.js";
 import { renderPaymentSummary } from "../checkout/paymentSummary.js";
 import { renderCheckoutHeader} from "../checkout/checkoutHeader.js"
+import formtCurrency from "../utils/money.js";
 /// instead chang the data one by one using dom we regenerate all the html by use function renderOrderSummary()
 export function renderOrderSummary() {
  // updateCartQuantity();
@@ -36,7 +37,7 @@ export function renderOrderSummary() {
               <div class="cart-item-details">
                 <div class="cart-item-details">
                   <div class="product-name">${matchingProduct.name}</div>
-                  <div class="product-price">${matchingProduct.price} DA</div>
+                  <div class="product-price">${formtCurrency(matchingProduct.price)} $</div>
                   <div class="product-quantity">
                     <span
                       >Quantity : <span class="quantity-label js-quantity-label-${
@@ -75,9 +76,9 @@ export function renderOrderSummary() {
     deliveryOptions.forEach((deliveryOption) => {
       const dateString =  calculateDeliveryDate(deliveryOption);
       const priceString =
-        deliveryOption.price === 0
+       deliveryOption.price === 0
           ? "FREE Shipping"
-          : `${deliveryOption.price} DA - Shipping`;
+          : `${formtCurrency(deliveryOption.price)} $ - Shipping`;
 
       const isChecked = deliveryOption.id === cartItem.deliveryOptionId;
 

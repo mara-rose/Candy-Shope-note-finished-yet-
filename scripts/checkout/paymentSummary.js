@@ -1,6 +1,7 @@
 import { cart, calculateCartQuantity } from "../../data/cart.js";
 import { getProduct } from "../../data/products.js";
 import { getDeliveryOption } from "../../data/deliveryOption.js";
+import  formtCurrency  from "../utils/money.js";
 export function renderPaymentSummary() {
   let productTotal = 0;
   let shippingTotal = 0;
@@ -22,27 +23,27 @@ export function renderPaymentSummary() {
       </div>
       <div class="payment-summary-row">
         <div>Item (${calculateCartQuantity()}):</div>
-        <div class="payment-summary-money">${productTotal} DA</div>
+        <div class="payment-summary-money">${formtCurrency(productTotal)} DA</div>
       </div>
 
       <div class="payment-summary-row">
         <div>Shipping &amp; handling:</div>
-        <div class="payment-summary-money">${shippingTotal} DA</div>
+        <div class="payment-summary-money">${formtCurrency(shippingTotal)} DA</div>
       </div>
 
       <div class="payment-summary-row subtotal-row">
         <div>Total before tax:</div>
-        <div class="payment-summary-money">${totalBeforeTax} DA</div>
+        <div class="payment-summary-money">${formtCurrency(totalBeforeTax)} DA</div>
       </div>
 
       <div class="payment-summary-row">
         <div>Estimated tax (10%)</div>
-        <div class="payment-summary-money">${TaxProduct} DA</div>
+        <div class="payment-summary-money">${formtCurrency(TaxProduct)} DA</div>
       </div>
 
       <div class="payment-summary-row total-row">
         <div>Order total:</div>
-        <div class="payment-summary-money">${totalAllPayment} DA</div>
+        <div class="payment-summary-money">${formtCurrency(totalAllPayment)} DA</div>
       </div>
 
       <button class="place-order-button button-primary">
