@@ -1,4 +1,9 @@
-export let cart = JSON.parse(localStorage.getItem("cart"));
+export let cart;
+
+loadFromStorage();
+// we put it in function for a test so we can mock and then get localStorage of cart 
+export function loadFromStorage(){
+cart = JSON.parse(localStorage.getItem("cart"));
 if (!cart) {
   cart = [
     {
@@ -13,6 +18,11 @@ if (!cart) {
     },
   ];
 }
+}
+
+
+
+
 // to save the cart in localstorage
 function saveToStorage() {
   localStorage.setItem("cart", JSON.stringify(cart));
@@ -31,7 +41,7 @@ export function addToCart(productId) {
   const selectorElement = document.querySelector(
     `.js-quantity-selector-${productId}`,
   );
-  const quantity = Number(selectorElement.value);
+  const quantity = selectorElement ? Number(selectorElement.value) : 1;
   //mathcingItem truthy
   if (matchingItem) {
     matchingItem.quantity += quantity;
