@@ -48,7 +48,10 @@ describe('test suite : renderOrderSummary',()=>{
    expect(document.querySelector(`.js-product-quantity-${productId1}`).innerText).toContain('Quantity : 2');
 
    expect(document.querySelector(`.js-product-quantity-${productId2}`).innerText).toContain('Quantity : 5');
+   // to check by name product after we add
    expect(document.querySelector(`.js-product-name-${productId1}`).innerText).toEqual('Glico Pocky Chocolate Biscuit');
+   // to check by price with product1
+   expect(document.querySelector(`.js-product-price-${productId1}`).innerText).toEqual('2.50 $');
   })
 
   it('removes a product',()=>{
@@ -64,5 +67,8 @@ describe('test suite : renderOrderSummary',()=>{
 
     // to check by name product after we remove
     expect(document.querySelector(`.js-product-name-${productId2}`).innerText).toEqual('Hershey Kisses Candy Cone');
+
+    // to check by price with product2 after remove
+    expect(document.querySelector(`.js-product-price-${productId2}`).innerText).toEqual('9.90 $')
   })
 })
