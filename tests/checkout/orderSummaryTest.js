@@ -64,7 +64,6 @@ describe('test suite : renderOrderSummary',()=>{
       productId1
     }`)).not.toEqual(productId1);
     expect(document.querySelector(`.js-cart-container-${productId1}`)).toEqual(null)
-
     // to check by name product after we remove
     expect(document.querySelector(`.js-product-name-${productId2}`).innerText).toEqual('Hershey Kisses Candy Cone');
 
