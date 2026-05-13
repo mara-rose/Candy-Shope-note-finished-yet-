@@ -1,8 +1,8 @@
-import {addToCart,cart, loadFromStorage,removeFromCart} from '../../data/cart.js';
+import {addToCart,cart, loadFromStorage,removeFromCart, updateDeliveryOption} from '../../data/cart.js';
 
 describe('test suite : addToCart',()=>{
    const productId1= "8a53b180-6d40-4i65-ab26-b94ecf709bce";
-   const productId2 = "a93a101d-79ef-4cf3-a6cf-6dbe532a1b4a"
+
   beforeEach(()=>{
     //Does nothing  (doesn't actually save)
     //Crashes nothing  (no errors)
@@ -116,5 +116,49 @@ describe('test suite : removeFromCart',()=>{
         quantity : 1,
         deliveryOptionId : "1"
       }]))
+  })
+})
+
+describe('test suite : updateDeliveryOption',()=>{
+    const productId1= "8a53b180-6d40-4i65-ab26-b94ecf709bce";
+      const productId2 = "a93a101d-79ef-4cf3-a6cf-6dbe532a1b4a"
+  beforeEach(()=>{
+    //Does nothing  (doesn't actually save)
+    //Crashes nothing  (no errors)
+    //Just pretends it ran 
+    spyOn(localStorage,'setItem');
+    spyOn(localStorage,'getItem').and.callFake(()=>{
+      return JSON.stringify([{
+        productId : productId1,
+        quantity : 1,
+        deliveryOptionId : "1"
+      }])
+    })
+    loadFromStorage();
+  })
+  it('update the delivery option of product in the cart',()=>{
+    updateDeliveryOption(productId1,'2');
+    expect(cart[0].deliveryOptionId).toEqual('2');
+    expect(cart[0].productId).toEqual(productId1);
+    expect(cart[0].quantity).toEqual(1);
+    expect(localStorage.setItem).toHaveBeenCalledTimes(1);
+    // after we change deliveryoptionid to 2 by function
+    //  updateDeliveryOption(productId1,'2');
+    // so we should updated deliveryOptionId  to 2 not 1
+    expect(localStorage.setItem).toHaveBeenCalledWith('cart',JSON.stringify([{
+        productId : productId1,
+        quantity : 1,
+        deliveryOptionId : "2"
+      }]))
+  
+  })
+
+  it('update the delivery option of product is NOT in the cart',()=>{
+    updateDeliveryOption('does-not-exist', '3');
+    expect(cart.length).toEqual(1);
+    // is not called bc we give productId not exist in cart
+    expect(localStorage.setItem).toHaveBeenCalledTimes(0);
+    expect(cart[0].deliveryOptionId).toEqual('1');
+    
   })
 })
