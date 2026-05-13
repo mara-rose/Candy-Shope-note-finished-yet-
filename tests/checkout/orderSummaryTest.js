@@ -33,7 +33,11 @@ describe('test suite : renderOrderSummary',()=>{
     renderOrderSummary();
   })
 
-
+  // share code after test 
+  afterEach(()=>{
+    // to remove the test in the page after we finish testing
+    document.querySelector('.js-test-container').innerHTML ='';
+  })
 
   it('display the cart',()=>{
     // to check element container if has 2 cart item containers in the page 
@@ -44,8 +48,7 @@ describe('test suite : renderOrderSummary',()=>{
    expect(document.querySelector(`.js-product-quantity-${productId1}`).innerText).toContain('Quantity : 2');
 
    expect(document.querySelector(`.js-product-quantity-${productId2}`).innerText).toContain('Quantity : 5');
-    // to remove the test in the page after we finish testing
-   document.querySelector('.js-test-container').innerHTML ='';
+
   })
 
   it('removes a product',()=>{
@@ -58,7 +61,6 @@ describe('test suite : renderOrderSummary',()=>{
       productId1
     }`)).not.toEqual(productId1);
     expect(document.querySelector(`.js-cart-container-${productId1}`)).toEqual(null)
-    // to remove the test in the page after we finish testing
-    document.querySelector('.js-test-container').innerHTML ='';
+
   })
 })
