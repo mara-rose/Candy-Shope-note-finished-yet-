@@ -1,5 +1,5 @@
 import { renderOrderSummary } from "../../scripts/checkout/orderSummary.js";
-import { loadFromStorage,cart } from "../../data/cart.js";
+import { loadFromStorage,cart, } from "../../data/cart.js";
 describe('test suite : renderOrderSummary',()=>{
   // we put out the beforEach scope
     const productId1 ="b0f17cc5-8b40-4ca5-9142-b61fe3d98c85";
@@ -16,12 +16,12 @@ describe('test suite : renderOrderSummary',()=>{
       return JSON.stringify([
     {
       productId: productId1,
-      quantity: 2,
+      quantity: 1,
       deliveryOptionId: "1",
     },
     {
       productId:productId2,
-      quantity: 5,
+      quantity: 1,
       deliveryOptionId: "2",
     },
   ])
@@ -45,9 +45,9 @@ describe('test suite : renderOrderSummary',()=>{
     expect(document.querySelectorAll('.js-cart-item-container').length).toEqual(2);
     //check the quantity productId1 
     //since we have container have bunch of div 
-   expect(document.querySelector(`.js-product-quantity-${productId1}`).innerText).toContain('Quantity : 2');
+   expect(document.querySelector(`.js-product-quantity-${productId1}`).innerText).toContain('Quantity : 1');
 
-   expect(document.querySelector(`.js-product-quantity-${productId2}`).innerText).toContain('Quantity : 5');
+   expect(document.querySelector(`.js-product-quantity-${productId2}`).innerText).toContain('Quantity : 1');
    // to check by name product after we add
    expect(document.querySelector(`.js-product-name-${productId1}`).innerText).toEqual('Glico Pocky Chocolate Biscuit');
    // to check by price with product1
@@ -69,5 +69,18 @@ describe('test suite : renderOrderSummary',()=>{
 
     // to check by price with product2 after remove
     expect(document.querySelector(`.js-product-price-${productId2}`).innerText).toEqual('9.90 $')
+  })
+
+  // test updated option deliveryOptionsHTML
+  it('updating delivery option',()=>{
+    // we click to thrid option 
+   document.querySelector(`.js-delivery-option-${productId1}-3`).click();
+   // check if thrid option checked
+   expect(document.querySelector(`.js-delivery-option-input-${productId1}-3`).checked).toEqual(true);
+   expect(cart.length).toEqual(2);
+   expect(cart[0].deliveryOptionId).toEqual('3')
+   // check price after update option
+   expect(document.querySelector('.js-payment-summary-money').innerText).toEqual('12.00 $');
+   expect(document.querySelector('.js-payment-money').innerText).toEqual('26.84 $');
   })
 })

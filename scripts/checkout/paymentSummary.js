@@ -23,27 +23,29 @@ export function renderPaymentSummary() {
       </div>
       <div class="payment-summary-row">
         <div>Item (${calculateCartQuantity()}):</div>
-        <div class="payment-summary-money">${formtCurrency(productTotal)} DA</div>
+        <div class="payment-summary-money">${formtCurrency(productTotal)} $</div>
       </div>
 
       <div class="payment-summary-row">
         <div>Shipping &amp; handling:</div>
-        <div class="payment-summary-money">${formtCurrency(shippingTotal)} DA</div>
+        <div class="payment-summary-money
+        js-payment-summary-money">${formtCurrency(shippingTotal)} $</div>
       </div>
 
       <div class="payment-summary-row subtotal-row">
         <div>Total before tax:</div>
-        <div class="payment-summary-money">${formtCurrency(totalBeforeTax)} DA</div>
+        <div class="payment-summary-money">${formtCurrency(totalBeforeTax)} $</div>
       </div>
 
       <div class="payment-summary-row">
         <div>Estimated tax (10%)</div>
-        <div class="payment-summary-money">${formtCurrency(TaxProduct)} DA</div>
+        <div class="payment-summary-money">${formtCurrency(TaxProduct)} $</div>
       </div>
 
       <div class="payment-summary-row total-row">
         <div>Order total:</div>
-        <div class="payment-summary-money">${formtCurrency(totalAllPayment)} DA</div>
+        <div class="payment-summary-money
+        js-payment-money">${formtCurrency(totalAllPayment)} $</div>
       </div>
 
       <button class="place-order-button button-primary">
