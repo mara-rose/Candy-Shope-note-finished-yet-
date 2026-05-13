@@ -48,7 +48,7 @@ describe('test suite : renderOrderSummary',()=>{
    expect(document.querySelector(`.js-product-quantity-${productId1}`).innerText).toContain('Quantity : 2');
 
    expect(document.querySelector(`.js-product-quantity-${productId2}`).innerText).toContain('Quantity : 5');
-
+   expect(document.querySelector(`.js-product-name-${productId1}`).innerText).toEqual('Glico Pocky Chocolate Biscuit');
   })
 
   it('removes a product',()=>{
@@ -62,5 +62,7 @@ describe('test suite : renderOrderSummary',()=>{
     }`)).not.toEqual(productId1);
     expect(document.querySelector(`.js-cart-container-${productId1}`)).toEqual(null)
 
+    // to check by name product after we remove
+    expect(document.querySelector(`.js-product-name-${productId2}`).innerText).toEqual('Hershey Kisses Candy Cone');
   })
 })
