@@ -50,6 +50,140 @@ class Products {
 // in case we have array of products
 export const products = [
   {
+    id: '8c9c52b5-5a19-4xxb-a5d1-159a74-87c53',
+    image: 'images/candy/Wilton-Melting-Chocolate-White.avif',
+    name: "Wilton White Chocolate",
+    rating: {
+      stars: 2.5,
+      count: 385
+    },
+    price: 1050
+  },
+  {
+    id: '8c9c52b5-5a19-4xxb-a5d1-159a74-87c53',
+    image: 'images/candy/Newtons-Soft-Fruit-Chewy-Strawberry-Cookies.avif',
+    name: "Chewy Strawberry Cookies",
+    rating: {
+      stars: 3,
+      count: 15
+    },
+    price: 890
+  },
+  {
+    id: '8c9c5233-5a19-40xb-a5d1-359a74-87c53',
+    image: 'images/candy/ChocoMaker-Strawberry-Cr-me-Candy-Wafer-Melts.avif',
+    name: "ChocoMaker Strawberry Wafer",
+    rating: {
+      stars: 5,
+      count: 40
+    },
+    price: 743
+  },
+  {
+    id: "8c9c52b5-5a19-4bcb-a5d1-158a74287c53",
+    image: "images/candy/Leonessa-Dubai-Chocolate-Cones-.avif",
+    name: "Leonessa Dubai chocolate Cones",
+    rating: {
+      stars: 1,
+      count: 622,
+    },
+    price: 298,
+  },
+  {
+    id: "8c9c52b5-5a19-4bcb-a5d1-158a74287c53",
+    image: "images/candy/Chocovia-Pink-Chocolate-with-Strawberry.avif",
+    name: "Chocovia Strawberry Chocolate",
+    rating: {
+      stars: 2.5,
+      count: 50,
+    },
+    price: 560,
+  },
+  {
+    id: "8c9c52b5-5a19-4bcb-a5d1-158a74287c53",
+    image: "images/candy/Goldfish-Cheddar-Cheese.avif",
+    name: "Goldfish Cheddar Cheese",
+    rating: {
+      stars: 1,
+      count: 99,
+    },
+    price: 3022,
+  },
+  {
+    id: "a45cfa0a-66d6-4dc7-9475-e2b01595f7d7",
+    image: "images/candy/Ritter-Sport-Dark-Chocolate-with-Marzipan.avif",
+    name: "Ritter Sport Marzipan",
+    rating: {
+      stars: 1,
+      count: 282,
+    },
+    price: 2500,
+  },
+  {
+    id: "d339adf3-e004-4c20-a120-40e8874c66cb",
+    image:
+      "images/candy/Jolly-Rancher-Zero-Sugar-Tropical-Fruit-Flavored-Hard.avif",
+    name: "Jolly Rancher Zero-Suger-Tropical-Fruit",
+    rating: {
+      stars: 4.5,
+      count: 117,
+    },
+    price: 1900,
+  },
+  {
+    id: "d37a651a-d501-483b-aae6-a9659b0757a0",
+    image:
+      "images/candy/Werthers-Original-Hard-Sugar-Free-Assorted-Flavors-Caramel-Coffee-Caramel-Chocalate-Caramel-Candy.avif",
+    name: "Flavors Caramel Coffee Candy",
+    rating: {
+      stars: 3,
+      count: 126,
+    },
+    price: 2800,
+  },
+  {
+    id: "0d7f9afa-2efe-4fd9-b0fd-ba5663e0a524",
+    image: "images/candy/Little-Debbie-Family-Pack-Oatmeal-Creme-Pies.avif",
+    name: "Debbie Family Pack Oatmeal Creme",
+    rating: {
+      stars: 3,
+      count: 1211,
+    },
+    price: 2250,
+  },
+  {
+    id: "8a53b080-6d40-4a65-ab26-b24ecf700bce",
+    image: "images/candy/HOSTESS-Powdered-DONETTES-Bag-Sugar-Mini-Donuts.avif",
+    name: "Donettes Bag Sugar Mini Powdered",
+    rating: {
+      stars: 2.5,
+      count: 93,
+    },
+    price: 910,
+  },
+  {
+    id: "10ed8504-57db-433c-b0a3-fc71a35c88a1",
+    image:
+      "images/candy/Pop-Tarts-Frosted-Confetti-Cupcake-Toaster-Pastries.avif",
+    name: "Cupcake Toaster Pastries",
+    rating: {
+      stars: 4,
+      count: 89,
+    },
+    price: 1200,
+  },
+  {
+    id: "77a845b1-16ed-4eac-bdf9-5b591882113d",
+    image:
+      "images/candy/Bonjour-Bakery-Soft-Baked-Cookies-Double-Chocolate.avif",
+    name: "Bonjour Bakery Soft Baked",
+    rating: {
+      stars: 4,
+      count: 3,
+    },
+    price: 440,
+  },
+  {
     id: "8c9c52b5-5a19-4bcb-a5d1-158a74287c53",
     image: "images/candy/snicker-s.avif",
     name: "Chocolate Snicker",
@@ -414,80 +548,6 @@ export const products = [
       count: 130,
     },
     price: 14409,
-  },
-  {
-    id: "a45cfa0a-66d6-4dc7-9475-e2b01595f7d7",
-    image: "images/candy/Ritter-Sport-Dark-Chocolate-with-Marzipan.avif",
-    name: "Ritter Sport Marzipan",
-    rating: {
-      stars: 1,
-      count: 282,
-    },
-    price: 2500,
-  },
-  {
-    id: "d339adf3-e004-4c20-a120-40e8874c66cb",
-    image:
-      "images/candy/Jolly-Rancher-Zero-Sugar-Tropical-Fruit-Flavored-Hard.avif",
-    name: "Jolly Rancher Zero-Suger-Tropical-Fruit",
-    rating: {
-      stars: 4.5,
-      count: 117,
-    },
-    price: 1900,
-  },
-  {
-    id: "d37a651a-d501-483b-aae6-a9659b0757a0",
-    image:
-      "images/candy/Werthers-Original-Hard-Sugar-Free-Assorted-Flavors-Caramel-Coffee-Caramel-Chocalate-Caramel-Candy.avif",
-    name: "Flavors Caramel Coffee Candy",
-    rating: {
-      stars: 3,
-      count: 126,
-    },
-    price: 2800,
-  },
-  {
-    id: "0d7f9afa-2efe-4fd9-b0fd-ba5663e0a524",
-    image: "images/candy/Little-Debbie-Family-Pack-Oatmeal-Creme-Pies.avif",
-    name: "Debbie Family Pack Oatmeal Creme",
-    rating: {
-      stars: 3,
-      count: 1211,
-    },
-    price: 2250,
-  },
-  {
-    id: "8a53b080-6d40-4a65-ab26-b24ecf700bce",
-    image: "images/candy/HOSTESS-Powdered-DONETTES-Bag-Sugar-Mini-Donuts.avif",
-    name: "Donettes Bag Sugar Mini Powdered",
-    rating: {
-      stars: 2.5,
-      count: 93,
-    },
-    price: 910,
-  },
-  {
-    id: "10ed8504-57db-433c-b0a3-fc71a35c88a1",
-    image:
-      "images/candy/Pop-Tarts-Frosted-Confetti-Cupcake-Toaster-Pastries.avif",
-    name: "Cupcake Toaster Pastries",
-    rating: {
-      stars: 4,
-      count: 89,
-    },
-    price: 1200,
-  },
-  {
-    id: "77a845b1-16ed-4eac-bdf9-5b591882113d",
-    image:
-      "images/candy/Bonjour-Bakery-Soft-Baked-Cookies-Double-Chocolate.avif",
-    name: "Bonjour Bakery Soft Baked",
-    rating: {
-      stars: 4,
-      count: 3,
-    },
-    price: 440,
   },
   {
     id: "36c64692-677f-4f58-b5ec-0dc2cf109e27",
