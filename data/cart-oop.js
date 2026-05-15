@@ -90,7 +90,7 @@ return cart
 }
 
 const cart = Cart('cart-oop');
-const businessCart = Cart('cart-busniess');
+const businessCart = Cart('cart-business');
 
 cart.loadFromStorage();
 businessCart.loadFromStorage();

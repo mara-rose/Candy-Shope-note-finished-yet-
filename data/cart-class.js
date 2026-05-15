@@ -1,6 +1,6 @@
 class Cart {
   cartItems;
-  localStoragekey = undefined;
+  #localStoragekey = undefined;
 
   constructor(localStoragekey) {
     // cart.localStoragekey = 'cart-oop';
@@ -10,12 +10,12 @@ class Cart {
     // each object have run constructor
     // don't call cart everytime so :
     // this. whatever objcet that we generated it
-    this.localStoragekey = localStoragekey;
-    this.loadFromStorage();
+    this.#localStoragekey = localStoragekey;
+    this.#loadFromStorage();
   }
 
-  loadFromStorage() {
-    this.cartItems = JSON.parse(localStorage.getItem(this.localStoragekey));
+  #loadFromStorage() {
+    this.cartItems = JSON.parse(localStorage.getItem(this.#localStoragekey));
     if (!this.cartItems) {
       this.cartItems = [
         {
@@ -33,7 +33,7 @@ class Cart {
   };
   // saveToStorage : function(){}
   saveToStorage() {
-    localStorage.setItem(this.localStoragekey, JSON.stringify(this.cartItems));
+    localStorage.setItem(this.#localStoragekey, JSON.stringify(this.cartItems));
   };
   // addToCart : function(productId){}
   addToCart(productId) {
