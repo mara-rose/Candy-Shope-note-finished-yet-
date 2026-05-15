@@ -1,3 +1,4 @@
+import formtCurrency from "../scripts/utils/money.js";
 // put productId of cart array and find match with
 // id of product then put it in matchingProudct
 export function getProduct(productId) {
@@ -9,6 +10,44 @@ export function getProduct(productId) {
   });
   return matchingProduct;
 }
+
+class Products {
+  id;
+  image;
+  name;
+  rating;
+  price;
+
+  constructor(productDetails) {
+    this.id = productDetails.id;
+    this.image = productDetails.image;
+    this.name = productDetails.name
+    this.rating = productDetails.rating;
+    this.price = productDetails.price;
+  }
+
+  getStarsUrl() {
+    return `images/ratings/rating-${this.rating.stars * 10}.png`;
+  }
+
+  getPrice() {
+    return `${formtCurrency(this.price)} $`;
+  }
+}
+
+// in case we have one proudct
+//const product1 = new Products({
+//  id: "8c9c52b5-5a19-4bcb-a5d1-158a74287c53",
+//  image: "images/candy/snicker-s.avif",
+//  name: "Chocolate Snicker",
+//  rating: {
+//   stars: 0,
+//   count: 1010,
+// },
+//  price: 2095,
+//});
+
+// in case we have array of products
 export const products = [
   {
     id: "8c9c52b5-5a19-4bcb-a5d1-158a74287c53",
@@ -491,4 +530,7 @@ export const products = [
     },
     price: 910,
   },
-];
+].map((productDetails) => {
+  return new Products(productDetails)
+});// convert each product (productDetails) into an object
+
